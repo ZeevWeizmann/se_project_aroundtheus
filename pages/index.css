@@ -1,0 +1,62 @@
+@import url("../vendors/normalize.css");
+@import url("../vendors/fonts.css");
+@import url("../blocks/page.css");
+@import url("../blocks/header.css");
+@import url("../blocks/nav.css");
+@import url("../blocks/recipes.css");
+@import url("../blocks/reservation.css");
+@import url("../blocks/form.css");
+@import url("../blocks/menu.css");
+@import url("../blocks/card.css");
+@import url("../blocks/about.css");
+@import url("../blocks/footer.css");
+@import url("../blocks/profile.css");
+@media screen and (max-width: 320px) and (max-height: 2812px) {
+  .cards {
+    grid-template-columns: repeat(1, 282px);
+    grid-template-rows: repeat(auto, 361px);
+    margin-top: 36px;
+    width: 282px;
+    height: 2266px;
+  }
+  .profile__info_name {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  .profile__info_profession {
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  .profile {
+    flex-direction: column;
+    width: 282px;
+    height: 286px;
+    align-items: center;
+  }
+  .footer {
+    min-width: 282px;
+  }
+
+  .profile__button_add {
+    width: 282px;
+    height: 50px;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile__info {
+    width: 282px;
+    height: 50px;
+  }
+  .profile__info_text {
+    justify-content: center;
+    gap: 10px;
+  }
+}

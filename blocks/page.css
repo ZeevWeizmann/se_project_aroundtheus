@@ -1,0 +1,97 @@
+.page {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background-color: #000000;
+  max-width: 1280px;
+  max-height: 1217px;
+  margin: auto;
+  padding: 45px 200px 60px 200px;
+
+  font-weight: 400;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+.page__content {
+  margin: 40px 0 0;
+}
+.page__content__card {
+  background-color: #ffffff;
+  width: 282px;
+  height: 361px;
+  border-radius: 10px;
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+}
+
+.page__content__card_image {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 282px);
+  grid-template-rows: repeat(2, 361px);
+  grid-gap: 17px 20px;
+  justify-content: center;
+  margin: 51px 0 0;
+  width: 880px;
+  height: 742px;
+}
+
+.card__description {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+}
+
+.card__caption {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px 0 20px;
+  align-items: center;
+}
+
+.card__like {
+  width: 21px;
+  height: 18px;
+}
+
+.card__caption_fifth {
+  display: flex;
+  padding: 0 29px 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.flex-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.card__button_like {
+  border: 0;
+  padding: 0;
+  width: 21px;
+  height: 18px;
+  background-color: #ffffff;
+}
+
+.card__button_like:hover {
+  opacity: 50%;
+  cursor: url("../images/Layer.png"), auto;
+}
