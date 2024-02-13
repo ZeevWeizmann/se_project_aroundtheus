@@ -2,26 +2,22 @@
 @import url("../vendors/fonts.css");
 @import url("../blocks/page.css");
 @import url("../blocks/header.css");
-@import url("../blocks/nav.css");
-@import url("../blocks/recipes.css");
-@import url("../blocks/reservation.css");
-@import url("../blocks/form.css");
 @import url("../blocks/gallery.css");
 @import url("../blocks/card.css");
-@import url("../blocks/about.css");
 @import url("../blocks/footer.css");
 @import url("../blocks/profile.css");
+
 @media screen and (max-width: 320px) {
   .gallery {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
     margin-top: 36px;
-
+    width: 100%;
     height: 2266px;
   }
   .profile__info-name {
     font-size: 22px;
     font-weight: 500;
-    line-height: 27px;
+    line-height: 1.2;
     letter-spacing: 0em;
     margin-left: 0px;
     text-align: center;
@@ -38,6 +34,11 @@
     height: 286px;
     align-items: center;
   }
+
+  .card {
+    width: 100%;
+  }
+
   .footer {
     margin: 48px 0px 0px;
   }
@@ -72,8 +73,15 @@
     /* position: relative; */
   }
 
+  /* .profile__image-edit {
+    height: 7.5px;
+    width: 7.49px;
+  } */
+
   .page {
     padding: 28px 19px 36px;
+    max-width: 320px;
+    box-sizing: border-box;
   }
 
   .page__content {
