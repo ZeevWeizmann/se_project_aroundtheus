@@ -5,4 +5,18 @@
 .footer__copyright {
   color: #545454;
   margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.21;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 320px) {
+  .footer__copyright {
+    font-size: 14px;
+  }
+
+  .footer {
+    margin: 48px 0px 0px;
+  }
 }

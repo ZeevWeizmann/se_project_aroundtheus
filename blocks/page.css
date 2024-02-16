@@ -19,4 +19,18 @@
 
 .page__content {
   margin: 40px 0 0;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 320px) {
+  .page {
+    padding: 28px 19px 36px 19px;
+
+    max-width: 320px;
+    box-sizing: border-box;
+  }
+
+  .page__content {
+    margin-top: 42px;
+  }
 }
