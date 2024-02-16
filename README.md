@@ -9,7 +9,7 @@
 **Intro**
 
 This is a project for Sprint 3 of TripleTen.
-Completed by by Zeev Weizmann.
+Completed by Zeev Weizmann.
 
 **Link to project at GitHub Pages**
 
