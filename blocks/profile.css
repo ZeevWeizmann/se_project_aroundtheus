@@ -1,7 +1,6 @@
 .profile {
   color: #ffffff;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   margin: auto;
   gap: 165px;
@@ -107,17 +106,13 @@
     letter-spacing: 0em;
     margin-left: 0px;
     text-align: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+
     max-width: 373px;
   }
   .profile__info-profession {
     letter-spacing: 0em;
     text-align: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+
     max-width: 415px;
     font-size: 14px;
   }
@@ -146,18 +141,15 @@
     flex-direction: column;
     width: 100%;
     box-sizing: border-box;
-    max-width: 100%;
   }
 
   .profile__info {
     height: 50px;
     box-sizing: border-box;
-    max-width: 100%;
   }
   .profile__info-details {
     gap: 10px;
     justify-content: center;
-    max-width: 100%;
   }
 }
 
