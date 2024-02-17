@@ -113,14 +113,13 @@
     max-width: 373px;
   }
   .profile__info-profession {
-    font-size: 14px;
-
     letter-spacing: 0em;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     max-width: 415px;
+    font-size: 14px;
   }
   .profile {
     flex-direction: column;
