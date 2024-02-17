@@ -98,6 +98,12 @@
   object-fit: cover;
 }
 
+@media screen and (max-width: 1100px) {
+  .profile {
+    gap: 36px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .profile__info-name {
     font-size: 22px;
@@ -118,9 +124,7 @@
   }
   .profile {
     flex-direction: column;
-
     width: 100%;
-
     align-items: center;
     gap: 36px;
   }
@@ -150,11 +154,5 @@
   .profile__info-details {
     gap: 10px;
     justify-content: center;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .profile {
-    gap: 20px;
   }
 }
