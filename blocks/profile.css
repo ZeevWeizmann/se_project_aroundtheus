@@ -113,7 +113,8 @@
     max-width: 373px;
   }
   .profile__info-profession {
-    line-height: 17px;
+    font-size: 14px;
+
     letter-spacing: 0em;
     text-align: center;
     text-overflow: ellipsis;
