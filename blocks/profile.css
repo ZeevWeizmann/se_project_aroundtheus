@@ -3,14 +3,17 @@
   display: flex;
   align-items: center;
   margin: auto;
-  gap: 165px;
+  justify-content: space-between;
+  max-width: 880px;
+  flex-wrap: wrap;
+  max-width: 880px;
 }
 
 .profile__container {
   display: flex;
   gap: 30px;
   align-items: center;
-  margin: auto;
+  width: calc(100% - 315px);
   max-width: 100%;
 }
 
@@ -19,24 +22,23 @@
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  overflow: hidden;
 }
 
 .profile__info {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   gap: 7px;
-  margin: 0 auto;
+  margin: 0;
   max-width: 100%;
 }
 
 .profile__info-details {
   display: flex;
-  max-width: 100%;
+  width: 100%;
   gap: 18px;
   margin: auto;
   align-items: center;
+  max-width: 100%;
 }
 
 .profile__info-name {
@@ -45,7 +47,7 @@
   line-height: 1.14;
   letter-spacing: 0em;
   text-align: left;
-  margin: 0 auto 0;
+  margin: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -76,7 +78,7 @@
 }
 
 .profile__button-edit {
-  width: 24px;
+  min-width: 24px;
   height: 24px;
   border: 1px solid #ffffff;
   margin: 0;
@@ -85,6 +87,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 10px 10px;
+  cursor: url("../images/Layer.png"), auto;
 }
 
 .profile__button-add:hover {
@@ -98,9 +101,13 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 1100px) {
-  .profile {
-    gap: 36px;
+@media screen and (max-width: 372px) {
+  .profile__info-details {
+    gap: 0;
+  }
+
+  .profile__container {
+    gap: 0;
   }
 }
 
@@ -109,21 +116,18 @@
     font-size: 22px;
     font-weight: 500;
     line-height: 1.2;
-    letter-spacing: 0em;
-    margin-left: 0px;
     text-align: center;
-
     max-width: 373px;
   }
   .profile__info-profession {
-    letter-spacing: 0em;
     text-align: center;
 
-    max-width: 415px;
     font-size: 14px;
   }
+
   .profile {
     flex-direction: column;
+    max-width: 282px;
     width: 100%;
     align-items: center;
     gap: 36px;
@@ -134,7 +138,7 @@
     height: 50px;
   }
   .profile__button-edit {
-    width: 18px;
+    min-width: 18px;
     height: 18px;
     position: absolute;
     right: 34px;
@@ -148,9 +152,10 @@
   }
 
   .profile__info {
-    height: 50px;
-    box-sizing: border-box;
+    gap: 14px;
+    margin-top: 30px;
   }
+
   .profile__info-details {
     gap: 10px;
     justify-content: center;
