@@ -3,7 +3,7 @@
   background-color: #000000;
   max-width: 1280px;
   box-sizing: border-box;
-  padding: 45px 0 60px;
+  padding: 45px 20px 60px 20px;
   margin: auto;
   font-weight: 400;
 
@@ -20,7 +20,7 @@
   max-width: 100%;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 650px) {
   .page {
     padding: 28px 19px 36px 19px;
     max-width: 320px;
