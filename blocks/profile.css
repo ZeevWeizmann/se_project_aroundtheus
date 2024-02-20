@@ -6,7 +6,6 @@
   justify-content: space-between;
   max-width: 880px;
   flex-wrap: wrap;
-  max-width: 880px;
 }
 
 .profile__container {
@@ -110,7 +109,6 @@
   }
   .profile__info-profession {
     text-align: center;
-
     font-size: 14px;
   }
 
@@ -132,15 +130,12 @@
   }
 
   .profile__container {
-    display: flex;
     flex-direction: column;
     width: 100%;
-    box-sizing: border-box;
   }
 
   .profile__info {
     gap: 14px;
-    margin-top: 30px;
   }
 
   .profile__info-details {
