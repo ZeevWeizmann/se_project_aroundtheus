@@ -1,0 +1,47 @@
+.model {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  padding: 0 19px;
+}
+
+.model__container {
+  margin: auto;
+  padding: 36px;
+  background-color: #fff;
+  border-radius: 10px;
+  z-index: 9999;
+  position: relative;
+}
+
+.model__close {
+  background-image: url(../images/сlose.svg);
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  /* top: -45px;
+  right: -45px; */
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
+}
+
+@media screen and (max-width: 630px) {
+  .model__close {
+    width: 26px;
+    height: 26px;
+
+    left: calc(100% - 26px);
+  }
+}
