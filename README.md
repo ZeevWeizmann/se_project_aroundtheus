@@ -14,4 +14,6 @@ Completed by Zeev Weizmann.
 
 - [Link to the project](https://zeevweizmann.github.io/se_project_aroundtheus/)
 
+**Link to video about the project**
+
 _Thank you for taking the time to review my project. Your interest and support are greatly appreciated._
