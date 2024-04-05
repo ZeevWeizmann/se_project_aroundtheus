@@ -25,14 +25,63 @@ const initialCards = [
   },
 ];
 
-let model = document.querySelector(".model");
-let modelClose = document.querySelector(".model__close");
-let profileButtonEdit = document.querySelector(".profile__button-edit");
+/* Elements */
+const profileEditModel = document.querySelector("#profile-edit-model");
+const modelClose = document.querySelector(".model__close");
+const profileButtonEdit = document.querySelector(".profile__button-edit");
+const profileInfoName = document.querySelector(".profile__info-name");
+const profileInfoProfession = document.querySelector(
+  ".profile__info-profession"
+);
+const profileInfoNameInput = document.querySelector("#info-name-input");
+const profileInfoProfessionInput = document.querySelector(
+  "#info-profession-input"
+);
+const profileEditForm = profileEditModel.querySelector(".model__form");
+const cardListEl = document.querySelector(".cards");
+const cardTemplate =
+  document.querySelector("#card-template").content.firstElementChild;
+/* Functions */
 
-profileButtonEdit.onclick = function () {
-  model.style.display = "flex";
-};
+function closePopop() {
+  profileEditModel.classList.remove("model__opened");
+}
 
-modelClose.onclick = function () {
-  model.style.display = "none";
-};
+function getCardElement(cardData) {
+  console.log(initialCards);
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardImageEl = cardElement.querySelector(".card__image");
+  const cardTitleEl = cardElement.querySelector(".card__description");
+  cardTitleEl.textContent = cardData.name;
+  cardImageEl.src = cardData.link;
+  cardImageEl.alt = cardData.name;
+  return cardElement;
+}
+
+/* Event handlers */
+function handleProfileSubmit(e) {
+  e.preventDefault();
+  profileInfoName.textContent = profileInfoNameInput.value;
+  profileInfoProfession.textContent = profileInfoProfessionInput.value;
+  closePopop();
+}
+
+/* Event listeners */
+
+profileButtonEdit.addEventListener("click", () => {
+  profileInfoNameInput.value = profileInfoName.textContent;
+  profileInfoProfessionInput.value = profileInfoProfession.textContent;
+  profileEditModel.classList.add("model__opened");
+});
+
+modelClose.addEventListener("click", closePopop);
+profileEditForm.addEventListener("submit", handleProfileSubmit);
+
+/* for (let i = 0; i < initialCards.length; i++) {
+  console.log(initialCards[i]);
+}
+ */
+initialCards.forEach((cardData) => {
+  const cardElement = getCardElement(cardData);
+  cardListEl.append(cardElement);
+});
