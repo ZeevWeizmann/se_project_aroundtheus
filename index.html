@@ -39,24 +39,26 @@
         <p class="footer__copyright">© 2022 Around The U.S.</p>
       </footer>
     </div>
-    <div class="model" id="profile-edit-model">
-      <div class="model__container">
-        <button class="model__close"></button>
-        <form class="model__form">
-          <p class="model__heading">Edit Profile</p>
+    <div class="modal" id="profile-edit-modal">
+      <div class="modal__container">
+        <button class="modal__close"></button>
+        <form class="modal__form" name="profile-form">
+          <p class="modal__heading">Edit profile</p>
           <input
             type="text"
             name="info-name"
             id="info-name-input"
             placeholder="Name"
+            class="modal__input"
           />
           <input
             type="text"
             name="info-profession"
             id="info-profession-input"
             placeholder="Profession"
+            class="modal__input"
           />
-          <button class="model__button">Save</button>
+          <button class="modal__button">Save</button>
         </form>
       </div>
     </div>

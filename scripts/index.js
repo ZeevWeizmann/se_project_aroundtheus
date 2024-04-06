@@ -26,8 +26,8 @@ const initialCards = [
 ];
 
 /* Elements */
-const profileEditModel = document.querySelector("#profile-edit-model");
-const modelClose = document.querySelector(".model__close");
+const profileEditModal = document.querySelector("#profile-edit-modal");
+const modalClose = document.querySelector(".modal__close");
 const profileButtonEdit = document.querySelector(".profile__button-edit");
 const profileInfoName = document.querySelector(".profile__info-name");
 const profileInfoProfession = document.querySelector(
@@ -37,14 +37,14 @@ const profileInfoNameInput = document.querySelector("#info-name-input");
 const profileInfoProfessionInput = document.querySelector(
   "#info-profession-input"
 );
-const profileEditForm = profileEditModel.querySelector(".model__form");
+const profileEditForm = profileEditModal.querySelector('[name="profile-form"]');
 const cardListEl = document.querySelector(".cards");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 /* Functions */
 
-function closePopop() {
-  profileEditModel.classList.remove("model__opened");
+function closePopup() {
+  profileEditModal.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -63,7 +63,7 @@ function handleProfileSubmit(e) {
   e.preventDefault();
   profileInfoName.textContent = profileInfoNameInput.value;
   profileInfoProfession.textContent = profileInfoProfessionInput.value;
-  closePopop();
+  closePopup();
 }
 
 /* Event listeners */
@@ -71,10 +71,10 @@ function handleProfileSubmit(e) {
 profileButtonEdit.addEventListener("click", () => {
   profileInfoNameInput.value = profileInfoName.textContent;
   profileInfoProfessionInput.value = profileInfoProfession.textContent;
-  profileEditModel.classList.add("model__opened");
+  profileEditModal.classList.add("modal_opened");
 });
 
-modelClose.addEventListener("click", closePopop);
+modalClose.addEventListener("click", closePopup);
 profileEditForm.addEventListener("submit", handleProfileSubmit);
 
 /* for (let i = 0; i < initialCards.length; i++) {
