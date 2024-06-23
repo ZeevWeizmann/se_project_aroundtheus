@@ -5,6 +5,7 @@
   display: flex;
   gap: 25px;
   flex-direction: column;
+  position: relative;
 }
 
 .card__image {
@@ -47,6 +48,28 @@
 }
 
 .card__button-like:hover {
+  opacity: 50%;
+  cursor: url("../images/Layer.png"), auto;
+}
+
+.card__button-like_active {
+  background: url("../images/like_active.svg");
+}
+
+.card__button-delete {
+  border: 0;
+  padding: 0;
+  width: 18px;
+  height: 19.3px;
+  background: url("../images/Trash.svg");
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 15px;
+  top: 18px;
+}
+
+.card__button-delete:hover {
   opacity: 50%;
   cursor: url("../images/Layer.png"), auto;
 }
