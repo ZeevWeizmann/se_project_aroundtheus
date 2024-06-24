@@ -1,5 +1,5 @@
 .modal {
-  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,7 @@
   right: 0;
   left: 0;
   z-index: 999;
-  /* padding: 0 19px; */
+  padding: 0 19px;
   font-family: Inter, Arial, Helvetica, sans-serif;
 
   visibility: hidden;
@@ -17,7 +17,7 @@
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
-.modal__preview {
+/* .modal__preview {
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -33,7 +33,7 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-}
+} */
 
 .modal__preview_container {
   margin: auto;
