@@ -1,4 +1,4 @@
-# Project 5: Around The U.S.
+# Project 6: Around The U.S.
 
 ### Overview
 
@@ -7,7 +7,7 @@
 
 **Intro**
 
-This is a project for Sprint 5 of TripleTen.
+This is a project for Sprint 6 of TripleTen.
 Completed by Zeev Weizmann.
 
 **Link to project at GitHub Pages**
@@ -17,3 +17,4 @@ Completed by Zeev Weizmann.
 **Link to video about the project**
 
 _Thank you for taking the time to review my project. Your interest and support are greatly appreciated._
+gi
