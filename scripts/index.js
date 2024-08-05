@@ -90,6 +90,7 @@ function getCardElement(cardData) {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  resetFormErrors(modal.querySelector("form"));
 }
 
 /* Event handlers */
@@ -103,6 +104,7 @@ function handleProfileSubmit(e) {
 
 function handleAddCardSubmit(e) {
   e.preventDefault();
+
   const newCardData = {
     name: cardTitleInput.value,
     link: cardUrlInput.value,
@@ -145,3 +147,24 @@ closeButtons.forEach((button) => {
 
   button.addEventListener("click", () => closePopup(popup));
 });
+
+document.querySelectorAll(".modal").forEach(function (modal) {
+  const overlay = modal.querySelector(".modal__overlay");
+  if (overlay) {
+    overlay.addEventListener("click", function () {
+      closePopup(modal);
+    });
+  }
+});
+
+function closePopupByEsc(e) {
+  if (e.key === "Escape") {
+    const openModal = document.querySelector(".modal_opened");
+
+    if (openModal) {
+      closePopup(openModal);
+    }
+  }
+}
+
+document.addEventListener("keydown", closePopupByEsc);
