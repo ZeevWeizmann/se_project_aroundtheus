@@ -57,10 +57,10 @@ const closeButtons = document.querySelectorAll(".modal__close");
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closePopupByEsc);
 }
 
 function getCardElement(cardData) {
-  console.log(initialCards);
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__description");
@@ -72,9 +72,6 @@ function getCardElement(cardData) {
     likeButton.classList.toggle("card__button-like_active");
   });
   const deleteButton = cardElement.querySelector(".card__button-delete");
-  // deleteButton.addEventListener("click", () => {
-  //   console.log(deleteButton);
-  // });
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
@@ -90,7 +87,7 @@ function getCardElement(cardData) {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  resetFormErrors(modal.querySelector("form"));
+  document.addEventListener("keydown", closePopupByEsc);
 }
 
 /* Event handlers */
@@ -127,6 +124,7 @@ profileButtonEdit.addEventListener("click", () => {
   profileInfoProfessionInput.value = profileInfoProfession.textContent;
 
   openModal(profileEditModal);
+  resetFormErrors(profileEditModal.querySelector("form"), config);
 });
 
 profileEditForm.addEventListener("submit", handleProfileSubmit);
@@ -138,6 +136,7 @@ initialCards.forEach((cardData) => {
 //add new card
 addNewCardButton.addEventListener("click", () => {
   openModal(profileAddModal);
+  resetFormErrors(profileAddModal.querySelector("form"), config);
 });
 
 profileAddModal.addEventListener("submit", handleAddCardSubmit);
@@ -166,5 +165,3 @@ function closePopupByEsc(e) {
     }
   }
 }
-
-document.addEventListener("keydown", closePopupByEsc);

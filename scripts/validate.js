@@ -57,13 +57,10 @@ function enableValidation(options) {
   });
 }
 
-function resetFormErrors(formEl) {
-  const inputEls = formEl.querySelectorAll("input");
+function resetFormErrors(formEl, config) {
+  const inputEls = formEl.querySelectorAll(config.inputSelector);
   inputEls.forEach((inputEl) => {
-    hideInputError(formEl, inputEl, {
-      inputErrorClass: "modal__input_type_error",
-      errorClass: "modal__error_visible",
-    });
+    hideInputError(formEl, inputEl, config);
   });
 }
 

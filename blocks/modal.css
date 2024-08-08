@@ -17,7 +17,7 @@
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
-.modal__preview_container {
+.modal__preview-container {
   margin: auto;
   border-radius: 10px;
   z-index: 9999;
@@ -157,7 +157,6 @@ input[name="card-url"] {
 }
 
 .modal_opened {
-  /* display: flex; */
   visibility: visible;
   opacity: 1;
   transition-delay: 0s;
@@ -186,6 +185,11 @@ input[name="card-url"] {
   margin-top: 5px;
   color: #ff0000;
   font-size: 0.75rem;
+}
+
+.modal__error {
+  margin-top: 5px;
+  min-height: 12px;
 }
 
 .modal__button_disabled {
