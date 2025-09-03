@@ -1,3 +1,6 @@
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -60,31 +63,6 @@ function closePopup(modal) {
   document.removeEventListener("keydown", closePopupByEsc);
 }
 
-function getCardElement(cardData) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__description");
-  const likeButton = cardElement.querySelector(".card__button-like");
-  cardTitleEl.textContent = cardData.name;
-  cardImageEl.src = cardData.link;
-  cardImageEl.alt = cardData.name;
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__button-like_active");
-  });
-  const deleteButton = cardElement.querySelector(".card__button-delete");
-  deleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-  cardImageEl.addEventListener("click", (event) => {
-    event.preventDefault();
-    openModal(previewImageModal);
-    previewImage.src = cardData.link;
-    previewImage.alt = cardData.name;
-    previewImageTitle.textContent = cardData.name;
-  });
-  return cardElement;
-}
-
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", closePopupByEsc);
@@ -110,10 +88,12 @@ function handleAddCardSubmit(e) {
   renderCard(newCardData, "prepend");
   closePopup(profileAddModal);
   addCardForm.reset();
+  addFormValidator.disableSubmitButton();
 }
 
 function renderCard(item, method = "prepend") {
-  const cardElement = getCardElement(item);
+  const card = new Card(item, "#card-template", handleImageClick);
+  const cardElement = card.getView();
   cardListEl[method](cardElement);
 }
 
@@ -124,7 +104,7 @@ profileButtonEdit.addEventListener("click", () => {
   profileInfoProfessionInput.value = profileInfoProfession.textContent;
 
   openModal(profileEditModal);
-  resetFormErrors(profileEditModal.querySelector("form"), config);
+  editFormValidator.resetValidation();
 });
 
 profileEditForm.addEventListener("submit", handleProfileSubmit);
@@ -136,7 +116,7 @@ initialCards.forEach((cardData) => {
 //add new card
 addNewCardButton.addEventListener("click", () => {
   openModal(profileAddModal);
-  resetFormErrors(profileAddModal.querySelector("form"), config);
+  addFormValidator.resetValidation();
 });
 
 profileAddModal.addEventListener("submit", handleAddCardSubmit);
@@ -165,3 +145,28 @@ function closePopupByEsc(e) {
     }
   }
 }
+
+function handleImageClick({ name, link }) {
+  previewImage.src = link;
+  previewImage.alt = name;
+  previewImageTitle.textContent = name;
+  openModal(previewImageModal);
+}
+/* Form Validation */
+const config = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
+};
+const editFormElement = profileEditModal.querySelector(".modal__form");
+const addFormElement = profileAddModal.querySelector(".modal__form");
+
+console.log(editFormElement);
+console.log(addFormElement);
+const editFormValidator = new FormValidator(config, editFormElement);
+const addFormValidator = new FormValidator(config, addFormElement);
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
