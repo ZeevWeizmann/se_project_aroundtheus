@@ -72,7 +72,6 @@
           <button class="modal__button" type="submit">Save</button>
         </form>
       </div>
-      s
     </div>
     <!-- Add card modal -->
     <div class="modal" id="profile-add-modal">
@@ -116,17 +115,10 @@
       <div class="modal__overlay"></div>
       <div class="modal__preview-container">
         <button class="modal__close"></button>
-        <form class="modal__form" name="preview-image-form">
-          <img
-            name="preview-image"
-            id="modal-preview-image"
-            class="modal__preview-image"
-          />
-          <p
-            class="modal__heading modal__heading_preview"
-            name="preview-image-title"
-          ></p>
-        </form>
+        <div class="modal__preview-content" id="preview-image-form">
+          <img id="modal-preview-image" class="modal__preview-image" />
+          <p class="modal__heading modal__heading_preview"></p>
+        </div>
       </div>
     </div>
     <template id="card-template">

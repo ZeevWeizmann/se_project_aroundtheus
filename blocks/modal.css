@@ -68,6 +68,11 @@
   flex-direction: column;
 }
 
+.modal__preview-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .modal__button {
   background-color: #000;
   color: #fff;
